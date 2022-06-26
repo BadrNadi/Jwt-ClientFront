@@ -1,0 +1,164 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" style="color:white;">
+       Paiement de facture </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+       
+       <button *ngIf="!isLoggedIn()" type="button" class="btn btn-light m-1" (click)="logout()">Logout</button>
+     
+    </div>
+  </nav>
+<br/>
+<hr />
+<div>
+  <mat-tab-group name="f" ngModel #status="ngModel" >
+    <mat-tab label="LISTE DES CREANCIERS">
+      <div class="row">
+        <div class="col-6 box">
+          <div class="row">
+            <div class="col-6 img">
+                
+              <img class="img-fluid" src="../assets/iam.png" style="max-width: 250px;" />
+            </div>
+            <div class="col-6">
+              <h2>IAM RECHARGES</h2>
+              <div class="left">
+                <mat-radio-button (change)="send($event)" value="TELEPHONIE ET INTERNET SIM">TELEPHONIE ET INTERNET SIM</mat-radio-button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 box">
+          <div class="row">
+            <div class="col-6 img">
+              <img class="img-fluid" src="../assets/iam.png" style="max-width: 250px;"/>
+            </div>
+            <div class="col-6">
+              <h2>IAM FACTURES</h2>
+              <div class="left">
+                <mat-radio-button (change)="send($event)" value="PRODUIT INTERNET SIM">PRODUIT INTERNET SIM</mat-radio-button><br/>
+                <mat-radio-button (change)="send($event)" value="PRODUIT FIXE SIM">PRODUIT FIXE SIM</mat-radio-button><br/>
+                <mat-radio-button  value="PRODUIT MOBILE SIM">PRODUIT MOBILE SIM</mat-radio-button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 box">
+          <div class="row">
+            <div class="col-6 img">
+                <br/>
+              <img class="img-fluid" src="../assets/Redal.jpeg" style="max-width: 250px;" />
+            </div>
+            <div class="col-6">
+                <br/>
+                <br/>
+                <br/>
+              <h2>REDAL</h2>
+              <div class="left">
+                <mat-radio-button   value="FACTURE REDAL">FACTURE REDAL</mat-radio-button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 box">
+          <div class="row">
+            <div class="col-6 img">
+              <img src="../assets/Amendis.png" style="max-width: 300px;" />
+            </div>
+            <div class="col-6">
+                <br/>
+                <br/>
+                <br/>
+              <h2>AMENDIS</h2>
+              
+              <div class="left">
+                <mat-radio-button  value="FACTURES AMENDIS">FACTURES AMENDIS</mat-radio-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-right: 20px;">
+        <button (click)="next()" type="button"  class="btn btn-outline-primary">Next</button>
+      </div>
+    
+    </mat-tab>
+   
+
+    <mat-tab label="HISTORIQUE">
+      <mat-accordion  class="example-headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div class="col-6">
+              <mat-panel-description > Maroc Telecom </mat-panel-description>
+            </div>
+            <div class="col-6">
+              <mat-panel-title>
+                <img src="../../../assets/images/iam.png" />
+              </mat-panel-title>
+            </div>
+          </mat-expansion-panel-header>
+          <div class="row"  >
+            <div class="container" >
+              <div class="col-9 box">
+                <div class="row">
+                  <div class="col-sm">Maroc</div>
+                  <div class="col-sm">tele</div>
+                  <div class="col-sm">payer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div class="col-6">
+              <mat-panel-description> Redal </mat-panel-description>
+            </div>
+            <div class="col-6">
+              <mat-panel-title>
+                <img src="../../../assets/images/Redal.jpeg" />
+              </mat-panel-title>
+            </div>
+          </mat-expansion-panel-header>
+          <div class="row" >
+            <div class="container" >
+              <div class="col-9 box">
+                <div class="row">
+                  <div class="col-sm">redale</div>
+                  <div class="col-sm">1</div>
+                  <div class="col-sm">2</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div class="col-6">
+              <mat-panel-description> Amendis </mat-panel-description>
+            </div>
+            <div class="col-6">
+              <mat-panel-title>
+                <img src="../../../assets/images/Amendis.png" />
+              </mat-panel-title>
+            </div>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="container" >
+              <div class="col-9 box">
+                <div class="row">
+                  <div class="col-sm">Amendis</div>
+                  <div class="col-sm">3</div>
+                  <div class="col-sm">4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-tab>
+  </mat-tab-group>
+</div>

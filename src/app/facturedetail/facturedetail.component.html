@@ -1,0 +1,29 @@
+<div class="row"style="height: 50% ; width:100%;justify-content: center; align-items: center; display: flex;" >
+    <div class="col-6 box" style="padding: 150px;justify-content: center; align-items: center; display: flex;">
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-md-center">
+        <div class="card" style="width: 40rem; ">
+          <img class="img-fluid" src="{{data.img}}" style="max-width: 250px;" /> 
+          <div class="card-body">
+            <h3 class="card-title">{{data.title}}</h3>
+
+            <div class="col-6" style="height:60%;width:100%">
+
+              <div class="left">
+                <form #clientfacture="ngForm">
+                  <input type="text" ngModel name="nom" placeholder="nom et prenom du donateur" style="width: 600px; padding:5px; margin: 2px; outline: none;"/><br/>
+                  <input type="text" ngModel name="montant" placeholder="montant du don (dh)" style="width: 600px;padding:5px; margin: 2px; outline: none;"/><br/><br/>
+                  </form>
+                <!-- <mat-radio-button (change)="send($event)" value="TELEPHONIE ET INTERNET SIM">TELEPHONIE ET INTERNET SIM</mat-radio-button> -->
+              </div>
+              <button class="btn btn-primary" (click)="facture(clientfacture)" >Valider</button>
+              <button class="btn btn-light" (click)="getback(clientfacture)"  >Cancel</button>
+              
+            
+            </div>
+            
+          </div>
+        </div>
+       
+      </div>
+    </div>
+   
